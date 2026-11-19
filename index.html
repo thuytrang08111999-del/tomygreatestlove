@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To My Greatest Love ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(145deg, #4b1827, #a4475b, #f3b7bd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 15px;
+  color: #783746;
+  overflow-x: hidden;
+}
+
+.card {
+  background: #fff9f5;
+  width: 100%;
+  max-width: 430px;
+  padding: 35px 25px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 50px #30091466;
+  position: relative;
+}
+
+.roses {
+  font-size: 43px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  color: #a43d59;
+  font-size: 29px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #b66b7c;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 23px;
+  line-height: 1.5;
+  color: #87394f;
+}
+
+.screen {
+  display: none;
+  animation: fade 0.8s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+button {
+  border: 1px solid #e8bdc7;
+  border-radius: 16px;
+  background: #fce9ed;
+  color: #87394f;
+  padding: 16px 12px;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #f3cbd5;
+  transform: scale(1.03);
+}
+
+button.primary {
+  background: #a43d59;
+  color: white;
+  border: none;
+}
+
+.message {
+  line-height: 1.9;
+  color: #8c5361;
+  margin: 20px 0;
+}
+
+.greeting {
+  text-align: left;
+  line-height: 2;
+  font-size: 16px;
+  margin-top: 25px;
+  border-top: 1px solid #edcbd1;
+  padding-top: 20px;
+}
+
+.signature {
+  text-align: right;
+  color: #a43d59;
+  font-style: italic;
+  margin-top: 25px;
+}
+
+.flower {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: fly 6s linear forwards;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fly {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="roses">🌹💐🌹</div>
+
+  <h1>Happy Men's Day</h1>
+  <div class="subtitle">To my greatest love ❤️</div>
+
+  <!-- MÀN HÌNH 1 -->
+  <div id="screen1" class="screen active">
+
+    <h2>Anh ơi anh à,<br>anh có iu em hông? 🥺</h2>
+
+    <div class="options">
+      <button onclick="rejectLove()">
+        Chê 🙄
+      </button>
+
+      <button class="primary" onclick="nextScreen(2)">
+        Anh iu em nhất trên đời ❤️
+      </button>
+    </div>
+
+    <p id="rejectText" class="message"></p>
+
+  </div>
+
+  <!-- MÀN HÌNH 2 -->
+  <div id="screen2" class="screen">
+
+    <h2>Hihi, em biết anh sẽ chọn cái này mà! 💗</h2>
+
+    <p class="message">
+      Thế anh có buồn vì em không nhớ
+      ngày Quốc tế Đàn ông không? 🥹
+    </p>
+
+    <div class="options">
+
+      <button class="primary" onclick="nextScreen(3)">
+        Anh hơi tủi thân 1 chút 🥺
+      </button>
+
+      <button onclick="tooSad()">
+        Anh đau khổ phát điên 😭
+      </button>
+
+    </div>
+
+    <p id="sadText" class="message"></p>
+
+  </div>
+
+  <!-- MÀN HÌNH 3 -->
+  <div id="screen3" class="screen">
+
+    <div class="roses">🌷💗🌷</div>
+
+    <h2>Thương anh bé của em!</h2>
+
+    <p class="message">
+      Thôi nào, lại đây em thương một cái.
+      Hôm nay có quà dành riêng cho anh đây! 💕
+    </p>
+
+    <button class="primary" onclick="nextScreen(4)">
+      Nhận lời chúc của em 💌
+    </button>
+
+  </div>
+
+  <!-- MÀN HÌNH 4 -->
+  <div id="screen4" class="screen">
+
+    <div class="roses">💐🌹💐</div>
+
+    <h2>Gửi người đàn ông của em</h2>
+
+    <div class="greeting">
+
+      <p>
+        Chúc anh 19/11 vui vẻ, tiền tài rủng rỉnh,
+        công việc hanh thông, sức khỏe dồi dào,
+        nhan sắc trường tồn.
+      </p>
+
+      <p>
+        Mong anh luôn đẹp trai trong mắt em,
+        luôn đúng trong những cuộc tranh luận...
+        và nếu có sai thì cũng phải biết cách
+        xin lỗi thật đáng yêu.
+      </p>
+
+      <p>
+        Đặc biệt, cả đời này chỉ được phép
+        chiều mỗi em thôi nhé!
+      </p>
+
+    </div>
+
+    <div class="signature">
+      With all my love,<br>
+      Bé Mèo meo meo ❤️
+    </div>
+
+    <div class="roses">🌹🌹🌹</div>
+
+  </div>
+
+</div>
+
+<script>
+
+function nextScreen(number) {
+
+  document.querySelectorAll(".screen").forEach(
+    screen => screen.classList.remove("active")
+  );
+
+  document.getElementById("screen" + number)
+    .classList.add("active");
+
+  if (number === 3 || number === 4) {
+    createFlowers();
+  }
+
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function rejectLove() {
+  document.getElementById("rejectText").innerText =
+    "Ơ kìa anh! Chọn lại đi, em không chấp nhận đáp án này đâu 😤❤️";
+}
+
+function tooSad() {
+  document.getElementById("sadText").innerText =
+    "Ối giời ơi, em xin lỗi anh bé! Đừng đau khổ nữa, chọn lại đi mà 🥺";
+}
+
+function createFlowers() {
+
+  const flowers = ["❤️", "🌹", "🌸", "💕"];
+
+  for (let i = 0; i < 25; i++) {
+
+    let flower = document.createElement("div");
+
+    flower.className = "flower";
+    flower.innerHTML =
+      flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.fontSize =
+      (16 + Math.random() * 20) + "px";
+
+    flower.style.animationDuration =
+      (3 + Math.random() * 4) + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 7000);
+  }
+}
+
+</script>
+
+</body>
+</html>
